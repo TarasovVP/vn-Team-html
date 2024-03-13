@@ -546,7 +546,7 @@
   flex-shrink: 0;
 }
 .home-text28 {
-  color: #ffffff;
+  color: rgba(91, 128, 92, 1);
   height: auto;
   flex-grow: 1;
   font-size: 64px;
@@ -611,7 +611,7 @@
   flex-shrink: 0;
 }
 .home-text35 {
-  color: rgb(255, 255, 255);
+  color: rgba(91, 128, 92, 1);
   height: auto;
   flex-grow: 1;
   font-size: 64px;
@@ -622,6 +622,7 @@
   line-height: 140%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-text38 {
   color: rgb(255, 255, 255);
@@ -648,6 +649,7 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-item06 {
   width: 300px;
@@ -674,7 +676,7 @@
   flex-shrink: 0;
 }
 .home-text41 {
-  color: rgb(255, 255, 255);
+  color: rgba(91, 128, 92, 1);
   height: auto;
   flex-grow: 1;
   font-size: 64px;
@@ -685,6 +687,7 @@
   line-height: 140%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-text44 {
   color: rgb(255, 255, 255);
@@ -711,6 +714,7 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-section4 {
   gap: 89px;
@@ -745,7 +749,7 @@
   flex-shrink: 0;
 }
 .home-text47 {
-  color: rgb(255, 255, 255);
+  color: rgba(91, 128, 92, 1);
   height: auto;
   flex-grow: 1;
   font-size: 64px;
@@ -756,6 +760,7 @@
   line-height: 140%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-text50 {
   color: rgba(255, 255, 255, 1);
@@ -782,6 +787,7 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-item08 {
   width: 300px;
@@ -808,7 +814,7 @@
   flex-shrink: 0;
 }
 .home-text54 {
-  color: rgb(255, 255, 255);
+  color: rgba(91, 128, 92, 1);
   height: auto;
   flex-grow: 1;
   font-size: 64px;
@@ -819,6 +825,7 @@
   line-height: 140%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-text57 {
   color: rgb(255, 255, 255);
@@ -845,6 +852,7 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-item09 {
   width: 300px;
@@ -871,7 +879,7 @@
   flex-shrink: 0;
 }
 .home-text60 {
-  color: rgb(255, 255, 255);
+  color: rgba(91, 128, 92, 1);
   height: auto;
   flex-grow: 1;
   font-size: 64px;
@@ -882,6 +890,7 @@
   line-height: 140%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-text63 {
   color: rgb(255, 255, 255);
@@ -908,6 +917,7 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.2s ease;
 }
 .home-blockblog {
   gap: 56px;

@@ -46,9 +46,9 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const secondItem = document.querySelector('.home-item05');
-    const secondItemHeaderText = document.querySelector('.home-text28');
-    const secondItemDescriptionText = document.querySelector('.home-text33');
-    firstItem.addEventListener('mouseover', function() {
+    const secondItemHeaderText = document.querySelector('.home-text35');
+    const secondItemDescriptionText = document.querySelector('.home-text39');
+    secondItem.addEventListener('mouseover', function() {
         secondItemHeaderText.style.color = 'rgba(255, 255, 255, 1)';
         secondItemDescriptionText.style.color = 'rgba(255, 255, 255, 1)';
     });
@@ -60,8 +60,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const thirdItem = document.querySelector('.home-item06');
-    const thirdItemHeaderText = document.querySelector('.home-text28');
-    const thirdItemDescriptionText = document.querySelector('.home-text33');
+    const thirdItemHeaderText = document.querySelector('.home-text41');
+    const thirdItemDescriptionText = document.querySelector('.home-text45');
     thirdItem.addEventListener('mouseover', function() {
         thirdItemHeaderText.style.color = 'rgba(255, 255, 255, 1)';
         thirdItemDescriptionText.style.color = 'rgba(255, 255, 255, 1)';
@@ -70,12 +70,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     thirdItem.addEventListener('mouseout', function() {
         thirdItemHeaderText.style.color = 'rgba(91, 128, 92, 1)';
-        firstItemDescriptionText.style.color = 'rgba(91, 128, 92, 1)';
+        thirdItemDescriptionText.style.color = 'rgba(91, 128, 92, 1)';
     });
 
     const forthItem = document.querySelector('.home-item07');
-    const forthItemHeaderText = document.querySelector('.home-text28');
-    const forthItemDescriptionText = document.querySelector('.home-text33');
+    const forthItemHeaderText = document.querySelector('.home-text47');
+    const forthItemDescriptionText = document.querySelector('.home-text52');
     forthItem.addEventListener('mouseover', function() {
         forthItemHeaderText.style.color = 'rgba(255, 255, 255, 1)';
         forthItemDescriptionText.style.color = 'rgba(255, 255, 255, 1)';
@@ -88,8 +88,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const fifthItem = document.querySelector('.home-item08');
-    const fifthItemHeaderText = document.querySelector('.home-text28');
-    const fifthItemDescriptionText = document.querySelector('.home-text33');
+    const fifthItemHeaderText = document.querySelector('.home-text54');
+    const fifthItemDescriptionText = document.querySelector('.home-text58');
     fifthItem.addEventListener('mouseover', function() {
         fifthItemHeaderText.style.color = 'rgba(255, 255, 255, 1)';
         fifthItemDescriptionText.style.color = 'rgba(255, 255, 255, 1)';
@@ -102,8 +102,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const sixthItem = document.querySelector('.home-item09');
-    const sixthItemHeaderText = document.querySelector('.home-text28');
-    const sixthItemDescriptionText = document.querySelector('.home-text33');
+    const sixthItemHeaderText = document.querySelector('.home-text60');
+    const sixthItemDescriptionText = document.querySelector('.home-text64');
     sixthItem.addEventListener('mouseover', function() {
         sixthItemHeaderText.style.color = 'rgba(255, 255, 255, 1)';
         sixthItemDescriptionText.style.color = 'rgba(255, 255, 255, 1)';
