@@ -13,6 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
         text.style.color = '';
     });
 
+    button.onclick = function() {
+        document.querySelector('.home-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
     //our blog
     const blockBlog = document.querySelector('.home-itemblog');
     const iconArrow = document.querySelector('.home-iconarrow img');
