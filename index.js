@@ -118,4 +118,75 @@ document.addEventListener('DOMContentLoaded', function() {
         sixthItemHeaderText.style.color = 'rgba(91, 128, 92, 1)';
         sixthItemDescriptionText.style.color = 'rgba(91, 128, 92, 1)';
     });
+
+    const buttonSend = document.querySelector('.home-btn-send');
+    const textSend = document.querySelector('.home-text65');
+
+    buttonSend.addEventListener('mouseover', function() {
+        textSend.style.color = 'rgba(91, 128, 92, 1)';
+    });
+
+
+    buttonSend.addEventListener('mouseout', function() {
+        textSend.style.color = '';
+    });
+
+    const inputName = document.querySelector('.home-input-name');
+    const inputEmail = document.querySelector('.home-input-email');
+    const inputMessage = document.querySelector('.home-input-message');
+
+    const inputNameError = document.querySelector('.input-name-error');
+    const inputEmailError = document.querySelector('.input-email-error');
+    const inputMessageError = document.querySelector('.input-message-error');
+
+    addInputListeners([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])
+    buttonSend.onclick = function() {
+        if (validateInputs([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])) {
+            const formData = {
+                name: inputName.value,
+                email: inputEmail.value,
+                message: inputMessage.value
+            };
+
+            fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function_contact_us', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'text/plain'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
+        }
+
+    };
 });
+
+function validateInputs(inputs, errorMessages) {
+    let isValid = true;
+
+    inputs.forEach((input, index) => {
+        const errorMessage = errorMessages[index];
+        const isEmpty = input.value.trim() === '';
+
+        if (isEmpty) {
+            errorMessage.style.visibility = 'visible';
+            isValid = false;
+        } else {
+            errorMessage.style.visibility = 'hidden';
+        }
+    });
+
+    return isValid;
+}
+
+function addInputListeners(inputs, errorMessages) {
+
+    inputs.forEach((input, index) => {
+        input.addEventListener('input', function() {
+            const errorMessage = errorMessages[index];
+            errorMessage.style.visibility = 'hidden';
+        })
+    });
+}
