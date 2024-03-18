@@ -249,9 +249,13 @@
   position: relative;
   align-items: flex-start;
 }
-.home-union {
-  width: 101px;
-  height: 101px;
+.lottie-container {
+  gap: 10px;
+  width: 105px;
+  height: 105px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
 }
 .home-icon01 {
   gap: 10px;

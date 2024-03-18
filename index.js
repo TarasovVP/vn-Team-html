@@ -142,25 +142,30 @@ document.addEventListener('DOMContentLoaded', function() {
     addInputListeners([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])
     buttonSend.onclick = function() {
         if (validateInputs([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])) {
-            const formData = {
-                name: inputName.value,
-                email: inputEmail.value,
-                message: inputMessage.value
-            };
 
-            fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function_contact_us', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'text/plain'
-                },
-                body: JSON.stringify(formData)
-            })
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error:', error));
+            fetchContactUs(inputName, inputEmail, inputMessage)
+
         }
 
     };
+
+    const animationContainer = document.querySelector('.lottie-container');
+
+    const animation = lottie.loadAnimation({
+        container: animationContainer,
+        renderer: 'svg',
+        loop: false,
+        autoplay: false,
+        path: 'lottie.json'
+    });
+    const itemContainer = document.querySelector('.home-item');
+    itemContainer.addEventListener('mouseenter', function() {
+        animation.play();
+    });
+
+    itemContainer.addEventListener('mouseleave', function() {
+        animation.stop();
+    });
 });
 
 function validateInputs(inputs, errorMessages) {
@@ -189,4 +194,30 @@ function addInputListeners(inputs, errorMessages) {
             errorMessage.style.visibility = 'hidden';
         })
     });
+}
+
+function fetchContactUs(inputName, inputEmail, inputMessage) {
+    const currentDateTime = new Date();
+    const formattedDate = currentDateTime.getDate() + ":" +
+        (currentDateTime.getMonth() + 1) + ":" + // Месяцы начинаются с 0
+        currentDateTime.getFullYear() + " " +
+        currentDateTime.getHours() + ":" +
+        currentDateTime.getMinutes() + ":" +
+        currentDateTime.getSeconds();
+    const contactUs = {
+        date: formattedDate,
+        name: inputName.value,
+        email: inputEmail.value,
+        message: inputMessage.value
+    };
+    fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function-contact-us', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'text/plain'
+        },
+        body: JSON.stringify(contactUs)
+    })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error('Error:', error));
 }
