@@ -125,6 +125,12 @@
   width: 24px;
   height: 24px;
 }
+.home-lang {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
 .home-text02 {
   color: rgba(255, 255, 255, 1);
   height: auto;
@@ -147,6 +153,9 @@
   flex-shrink: 0;
   justify-content: space-between;
 }
+.home-content {
+  flex-direction: column;
+}
 .home-text04 {
   color: rgba(255, 255, 255, 1);
   width: 786px;
@@ -166,6 +175,7 @@
   width: 200px;
   display: flex;
   padding: 8px;
+  margin-top: 40px;
   align-items: center;
   flex-shrink: 0;
   border-color: rgba(255, 255, 255, 1);

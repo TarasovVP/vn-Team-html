@@ -1,21 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', function() {
 
-    const button = document.querySelector('.home-btn');
-    const text = document.querySelector('.home-text06');
+    setTextToElements('en')
+    //lang
+    setLangButton( document.querySelector('.home-lang'), document.querySelector('.home-text02') )
 
-    button.addEventListener('mouseover', function() {
-        text.style.color = 'rgba(91, 128, 92, 1)';
-    });
-
-
-    button.addEventListener('mouseout', function() {
-        text.style.color = '';
-    });
-
-    button.onclick = function() {
-        document.querySelector('.home-form').scrollIntoView({ behavior: 'smooth' });
-    };
+    //contact us button
+    setHomeButton(document.querySelector('.home-btn'), document.querySelector('.home-text06'), document.querySelector('.home-form'))
 
     //what we do
     addWhatWeDoHover(document.querySelector('.lottie-container'), document.querySelector('.home-item'))
@@ -32,33 +23,11 @@ document.addEventListener('DOMContentLoaded', function() {
     whyUsHover(document.querySelector('.home-item09'), document.querySelector('.home-text60'), document.querySelector('.home-text64'))
 
     //our blog
-    const blockBlog = document.querySelector('.home-itemblog');
-    const iconArrow = document.querySelector('.home-iconarrow img');
-
-    if (blockBlog && iconArrow) {
-        const originalSrc = iconArrow.src;
-        const newSrc = 'public/external/iconi441-2ud.svg';
-
-        blockBlog.addEventListener('mouseover', function() {
-            iconArrow.src = newSrc;
-        });
-
-        blockBlog.addEventListener('mouseout', function() {
-            iconArrow.src = originalSrc;
-        });
-    }
+    setOurBlog(document.querySelector('.home-itemblog'), document.querySelector('.home-iconarrow img'))
 
     //contact us
-    const buttonSend = document.querySelector('.home-btn-send');
-    const textSend = document.querySelector('.home-text65');
-
-    buttonSend.addEventListener('mouseover', function() {
-        textSend.style.color = 'rgba(91, 128, 92, 1)';
-    });
-
-    buttonSend.addEventListener('mouseout', function() {
-        textSend.style.color = '';
-    });
+    const buttonSend = document.querySelector('.home-btn-send')
+    setSendButton(buttonSend, document.querySelector('.home-text65'))
 
     const inputName = document.querySelector('.home-input-name');
     const inputEmail = document.querySelector('.home-input-email');
@@ -78,6 +47,57 @@ document.addEventListener('DOMContentLoaded', function() {
 
     };
 });
+
+function setTextToElements(lang) {
+    fetch(`${lang}.json`)
+        .then(response => response.json())
+        .then(data => {
+            Object.keys(data).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = data[key];
+                }
+            });
+        })
+        .catch(error => console.error('Error loading language:', error));
+}
+
+function setLangButton(button, text) {
+
+    button.addEventListener('mouseover', function() {
+        text.style.color = 'rgba(91, 128, 92, 1)';
+    });
+
+
+    button.addEventListener('mouseout', function() {
+        text.style.color = '';
+    });
+
+    button.onclick = function() {
+        if (text.textContent === 'UA') {
+            setTextToElements('ua');
+            text.textContent = 'EN';
+        } else {
+            setTextToElements('en');
+            text.textContent = 'UA';
+        }
+    };
+}
+
+function setHomeButton(button, text, destination) {
+    button.addEventListener('mouseover', function() {
+        text.style.color = 'rgba(91, 128, 92, 1)';
+    });
+
+
+    button.addEventListener('mouseout', function() {
+        text.style.color = '';
+    });
+
+    button.onclick = function() {
+        destination.scrollIntoView({ behavior: 'smooth' });
+    };
+}
 
 function addWhatWeDoHover(animationContainer, itemContainer) {
     const animation = lottie.loadAnimation({
@@ -107,6 +127,31 @@ function whyUsHover(item, itemHeaderText, itemDescriptionText) {
     item.addEventListener('mouseout', function() {
         itemHeaderText.style.color = 'rgba(91, 128, 92, 1)';
         itemDescriptionText.style.color = 'rgba(91, 128, 92, 1)';
+    });
+}
+
+function setOurBlog(blockBlog, iconArrow) {
+    if (blockBlog && iconArrow) {
+        const originalSrc = iconArrow.src;
+        const newSrc = 'public/external/iconi441-2ud.svg';
+
+        blockBlog.addEventListener('mouseover', function() {
+            iconArrow.src = newSrc;
+        });
+
+        blockBlog.addEventListener('mouseout', function() {
+            iconArrow.src = originalSrc;
+        });
+    }
+}
+
+function setSendButton(buttonSend, textSend) {
+    buttonSend.addEventListener('mouseover', function() {
+        textSend.style.color = 'rgba(91, 128, 92, 1)';
+    });
+
+    buttonSend.addEventListener('mouseout', function() {
+        textSend.style.color = '';
     });
 }
 
