@@ -1,9 +1,14 @@
 
+let currentLanguage = 'en';
+
 document.addEventListener('DOMContentLoaded', function() {
 
-    setTextToElements('en')
+    //theme
+    setThemeButton(document.querySelector('.home-theme'))
+
     //lang
-    setLangButton( document.querySelector('.home-lang'), document.querySelector('.home-text02') )
+    setLangButton( document.querySelector('.home-lang'))
+    setTextToElements()
 
     //contact us button
     setHomeButton(document.querySelector('.home-btn'), document.querySelector('.home-text06'), document.querySelector('.home-form'))
@@ -40,16 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
     addInputListeners([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])
     buttonSend.onclick = function() {
         if (validateInputs([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])) {
-
             fetchContactUs(inputName, inputEmail, inputMessage)
-
         }
 
     };
 });
 
-function setTextToElements(lang) {
-    fetch(`${lang}.json`)
+function setTextToElements() {
+    fetch(`${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
             Object.keys(data).forEach(key => {
@@ -62,25 +65,29 @@ function setTextToElements(lang) {
         .catch(error => console.error('Error loading language:', error));
 }
 
-function setLangButton(button, text) {
+function setThemeButton(button) {
+    const body = document.body;
+    let currenTheme = localStorage.getItem('theme') || 'light-theme'
+    body.classList.add(currenTheme);
+    button.src =  currenTheme === 'dark-theme' ? 'public/external/ic-dark-theme.svg' : 'public/external/ic-light-theme.svg';
 
-    button.addEventListener('mouseover', function() {
-        text.style.color = 'rgba(91, 128, 92, 1)';
-    });
-
-
-    button.addEventListener('mouseout', function() {
-        text.style.color = '';
-    });
-
-    button.onclick = function() {
-        if (text.textContent === 'UA') {
-            setTextToElements('ua');
-            text.textContent = 'EN';
+    button.addEventListener('click', () => {
+        if (body.classList.contains('dark-theme')) {
+            body.classList.replace('dark-theme', 'light-theme');
+            localStorage.setItem('theme', 'light-theme');
         } else {
-            setTextToElements('en');
-            text.textContent = 'UA';
+            body.classList.replace('light-theme', 'dark-theme');
+            localStorage.setItem('theme', 'dark-theme');
         }
+        button.src =  body.classList.contains('dark-theme') ? 'public/external/ic-dark-theme.svg' : 'public/external/ic-light-theme.svg';
+    });
+}
+
+function setLangButton(button) {
+    button.onclick = function() {
+        currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
+        button.src = currentLanguage === 'ua' ? 'public/external/ic-en-lang.svg' : 'public/external/ic-ua-lang.svg';
+        setTextToElements();
     };
 }
 
