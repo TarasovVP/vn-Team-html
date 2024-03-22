@@ -140,7 +140,7 @@ function whyUsHover(item, itemHeaderText, itemDescriptionText) {
 function setOurBlog(blockBlog, iconArrow) {
     if (blockBlog && iconArrow) {
         const originalSrc = iconArrow.src;
-        const newSrc = 'public/external/iconi441-2ud.svg';
+        const newSrc = 'public/external/ic-long-arrow.svg';
 
         blockBlog.addEventListener('mouseover', function() {
             iconArrow.src = newSrc;

@@ -36,21 +36,23 @@
 }
 .light-theme {
   --text-main-color: #485559;
-  --text-light-color: #FFFFFF; /*rgba(255, 255, 255, 1)*/
-  --color-accent: #5B805C; /*rgba(91, 128, 92, 1)*/
-  --background-element-color: #041E22; /*rgba(4, 30, 34, 1)*/
-  --alternate-background-element-color: #041F22; /*rgba(4, 31, 34, 1)*/
-  --additional-text-color: #5A7F5C; /*rgba(90, 127, 92, 1)*/
-  --background-image: url("public/bg-1500w-night.png");
+  --text-light-color: #FFFFFF;
+  --color-accent: #5B805C;
+  --background-element-color: #041E22;
+  --alternate-background-element-color: #041F22;
+  --additional-text-color: #5A7F5C;
+  --main-background-image: url("public/bg-1500w-night.png");
+  --logo-image: url("public/external/ic-logo-dark.svg");
 }
 .dark-theme {
   --text-main-color: #485559;
-  --text-light-color: #FFFFFF; /*rgba(255, 255, 255, 1)*/
-  --color-accent: #5B805C; /*rgba(91, 128, 92, 1)*/
-  --background-element-color: #041E22; /*rgba(4, 30, 34, 1)*/
-  --alternate-background-element-color: #041F22; /*rgba(4, 31, 34, 1)*/
-  --additional-text-color: #5A7F5C; /*rgba(90, 127, 92, 1)*/
-  --background-image: url("public/bg-1500w-day.png");
+  --text-light-color: #041F22;
+  --color-accent: #5B805C;
+  --background-element-color: #FFFFFF;
+  --alternate-background-element-color: #FFFFFF;
+  --additional-text-color: #5A7F5C;
+  --main-background-image: url("public/bg-1500w-day.png");
+  --logo-image: url("public/external/ic-logo-light.svg");
 }
 .button {
   color: var(--dl-color-gray-black);

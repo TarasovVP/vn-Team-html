@@ -7,7 +7,7 @@
   align-items: center;
   flex-direction: column;
   background-size: cover;
-  background-image: var(--background-image);
+  background-image: var(--main-background-image);
   background-position: center;
 }
 .home-header {
@@ -55,6 +55,7 @@
   position: relative;
   align-items: flex-start;
   flex-shrink: 1;
+  background-image: var(--logo-image);
 }
 .home-svg {
   top: 14px;
@@ -459,7 +460,7 @@
   align-self: stretch;
   font-style: normal;
   text-align: center;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 400;
   line-height: 139.9999976158142%;
   font-stretch: normal;
@@ -1081,14 +1082,6 @@
   align-items: center;
   flex-direction: column;
 }
-.home-contact01 {
-  width: 23px;
-  height: 23px;
-}
-.home-contact02 {
-  width: 24px;
-  height: 24px;
-}
 .input-name-container {
   display: flex;
   flex-direction: column;
@@ -1225,14 +1218,49 @@
   width: 100%;
 }
 .home-bottom {
+  width: 1110px;
   display: flex;
-  justify-content: center;
   margin: 16px 16px;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home-logo2 {
+  min-height: 50px;
+  min-width: 90px;
+  background-image: var(--logo-image);
+}
+.home-text67 {
+  color: var(--text-light-color);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: normal;
+  text-align: center;
+  font-family: Futura PT, serif;
+  font-weight: 400;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.home-text68 {
+  color: var(--text-light-color);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: normal;
+  text-align: center;
+  font-family: Futura PT, serif;
+  font-weight: 400;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-decoration: none;
 }
 @media(max-width: 1440px) {
   .home-container {
     background-size: cover;
-    background-image: var(--background-image);
+    background-image: var(--main-background-image);
     background-position: center;
   }
 }
