@@ -184,6 +184,7 @@
             href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
     <link rel="icon" type="image/png" href="public/external/ic-favicon.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
 </head>
 <body>
 <link rel="stylesheet" href="./style.css"/>
@@ -191,20 +192,13 @@
 <div>
     <div class="home-container">
         <div class="home-header">
-            <div class="home-header1">
             <div class="home-nav">
                 <div class="home-logo">
-                    <img
-                            alt="home-logo1"
-                            src="public/external/ic-logo-dark.svg"
-                            class="home-logo1"
-                    />
                 </div>
                 <div class="home-settings-container">
                     <img alt="home-theme" src="public/external/ic-light-theme.svg" class="home-theme"/>
                     <img alt="home-lang" src="public/external/ic-ua-lang.svg" class="home-lang"/>
                 </div>
-            </div>
             </div>
         </div>
         <div class="home-section">
@@ -317,7 +311,7 @@
                     <span>02</span>
                     <br/>
                   </span>
-                            <span class="home-text38"  id="constant_feedback">Constant feedback.</span>
+                            <span class="home-text38" id="constant_feedback">Constant feedback.</span>
                         </div>
                         <span class="home-text39">
                   <span id="communication_channels">In communication channels convenient for you.</span>
@@ -423,36 +417,32 @@
                 <div class="home-sectioncontact">
                     <div class="home-div1">
                         <a href="tg://resolve?domain=v_n_team" target="_blank">
-                            <img alt="contact014498" src="public/external/ic-telegram.svg" class="home-contact01"/>
+                            <div class="home-telegram"></div>
                         </a>
                         <a href="mailto:vn.team.main@gmail.com?subject=Request%20to%20V%20V&N%20TeamN%20Team&body=Hi,%20V%20V&N%20TeamN%20Team">
-                            <img
-                                    alt="contact024410"
-                                    src="public/external/ic-email.svg"
-                                    class="home-contact02"
-                            />
+                            <div class="home-email"></div>
                         </a>
                     </div>
                 </div>
                 <div class="input-name-container">
                     <label>
-                        <input type="text" placeholder="Name" class="home-input-name" />
+                        <input type="text" placeholder="Name" class="home-input-name"/>
                     </label>
                     <span class="input-name-error" id="form_name_error">Please complete this required field.</span>
                 </div>
-
                 <div class="input-email-container">
                     <label>
-                        <input type="text" placeholder="Email" class="home-input-email" />
+                        <input type="text" placeholder="Email" class="home-input-email"/>
                     </label>
                     <span class="input-email-error" id="form_email_error">Please complete this required field.</span>
                 </div>
 
                 <div class="input-message-container">
                     <label>
-                        <input type="text" placeholder="Message" class="home-input-message" />
+                        <textarea type="text" rows="5" placeholder="Message" class="home-input-message"></textarea>
                     </label>
-                    <span class="input-message-error" id="form_message_error">Please complete this required field.</span>
+                    <span class="input-message-error"
+                          id="form_message_error">Please complete this required field.</span>
                 </div>
 
                 <div class="home-btn-send">
@@ -469,6 +459,7 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script src="index.js"></script>
 </body>
 </html>

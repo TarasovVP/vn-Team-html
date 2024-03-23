@@ -35,24 +35,34 @@
   --dl-space-space-oneandhalfunits: 24px;
 }
 .light-theme {
-  --text-main-color: #485559;
-  --text-light-color: #FFFFFF;
+  --text-main-color: #FFFFFF;
   --color-accent: #5B805C;
   --background-element-color: #041E22;
   --alternate-background-element-color: #041F22;
   --additional-text-color: #5A7F5C;
+  --input-background-color: #5A7F5C;
+  --input-placeholder-color: #D9D9D9;
+  --input-border-color: #FFFFFF;
+  --shadow-color: rgba(255,255,255,0.1);
   --main-background-image: url("public/bg-1500w-night.png");
   --logo-image: url("public/external/ic-logo-dark.svg");
+  --telegram-image: url("public/external/ic-telegram-light.svg");
+  --email-image: url("public/external/ic-email-light.svg");
 }
 .dark-theme {
-  --text-main-color: #485559;
-  --text-light-color: #041F22;
+  --text-main-color: #041F22;
   --color-accent: #5B805C;
   --background-element-color: #FFFFFF;
   --alternate-background-element-color: #FFFFFF;
   --additional-text-color: #5A7F5C;
+  --input-background-color: #FFFFFF;
+  --input-placeholder-color: #999999;
+  --input-border-color: #5A7F5C;
+  --shadow-color: rgba(0,0,0,0.1);
   --main-background-image: url("public/bg-1500w-day.png");
   --logo-image: url("public/external/ic-logo-light.svg");
+  --telegram-image: url("public/external/ic-telegram-dark.svg");
+  --email-image: url("public/external/ic-email-dark.svg");
 }
 .button {
   color: var(--dl-color-gray-black);
@@ -70,7 +80,31 @@
   border-color: var(--dl-color-gray-black);
   border-width: 1px;
   border-radius: 4px;
-  background-color: var(--dl-color-gray-white);
+  background-color: var(--input-background-color);
+}
+input {
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input::placeholder {
+  color: var(--input-placeholder-color);
+}
+input:focus {
+  outline: none !important;
+  border: 1px solid var(--input-border-color);
+  box-shadow: 0 0 10px #719ECE;
+}
+textarea {
+  border: 1px solid rgba(0, 0, 0, 0);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+textarea::placeholder {
+  color: var(--input-placeholder-color);
+}
+textarea:focus {
+  outline: none !important;
+  border:1px solid var(--input-border-color);
+  box-shadow: 0 0 10px #719ECE;
 }
 .textarea {
   color: var(--dl-color-gray-black);

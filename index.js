@@ -61,6 +61,9 @@ function setTextToElements() {
                     element.textContent = data[key];
                 }
             });
+            document.querySelector('.home-input-name').placeholder = data['form_name_placeholder'];
+            document.querySelector('.home-input-email').placeholder = data['form_email_placeholder'];
+            document.querySelector('.home-input-message').placeholder = data['form_message_placeholder'];
         })
         .catch(error => console.error('Error loading language:', error));
 }
@@ -126,14 +129,16 @@ function addWhatWeDoHover(animationContainer, itemContainer) {
 
 function whyUsHover(item, itemHeaderText, itemDescriptionText) {
     item.addEventListener('mouseover', function() {
-        itemHeaderText.style.color = 'rgba(255, 255, 255, 1)';
-        itemDescriptionText.style.color = 'rgba(255, 255, 255, 1)';
+        const mainTextColor = getComputedStyle(document.body).getPropertyValue('--text-main-color').trim();
+        itemHeaderText.style.color = mainTextColor;
+        itemDescriptionText.style.color = mainTextColor;
     });
 
 
     item.addEventListener('mouseout', function() {
-        itemHeaderText.style.color = 'rgba(91, 128, 92, 1)';
-        itemDescriptionText.style.color = 'rgba(91, 128, 92, 1)';
+        const colorAccent = getComputedStyle(document.body).getPropertyValue('--additional-text-color').trim();
+        itemHeaderText.style.color = colorAccent;
+        itemDescriptionText.style.color = colorAccent;
     });
 }
 
@@ -212,6 +217,23 @@ function fetchContactUs(inputName, inputEmail, inputMessage) {
         body: JSON.stringify(contactUs)
     })
         .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error('Error:', error));
+        .then(data => showMessage(null))
+        .catch(error => showMessage(error));
+}
+
+
+function showMessage(error) {
+   /* const notyf = new Notyf();
+    try {
+        if (error !== null) {
+            console.error('Error:', error)
+            notyf.error(error.toString())
+        } else {
+            let successMessage = 'Успешно отправлено!'
+            console.log(successMessage)
+            notyf.success(successMessage)
+        }
+    } catch (e) {
+        console.error('Error:', e.message())
+    }*/
 }
