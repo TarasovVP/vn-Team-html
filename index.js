@@ -219,10 +219,20 @@ function fetchContactUs(inputName, inputEmail, inputMessage) {
         body: JSON.stringify(contactUs)
     })
         .then(response => response.toString())
-        .then(data => showMessage(null))
-        .catch(error => showMessage(error));
+        .then(data => handleResponse(inputName, inputEmail, inputMessage, null))
+        .catch(error => handleResponse(inputName, inputEmail, inputMessage, error));
 }
 
+function handleResponse(inputName, inputEmail, inputMessage, error) {
+    clearInputs(inputName, inputEmail, inputMessage)
+    showMessage(error)
+}
+
+function clearInputs(inputName, inputEmail, inputMessage) {
+    inputName.value = ''
+    inputEmail.value = ''
+    inputMessage.value = ''
+}
 
 function showMessage(error) {
     try {

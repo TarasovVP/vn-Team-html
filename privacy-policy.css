@@ -1,0 +1,163 @@
+.privacy-policy-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  font-style: normal;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  background-image: var(--main-background-image);
+  background-position: center;
+}
+.privacy-policy-header {
+  gap: 10px;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  justify-content: center;
+  background-image: var(--main-background-image);
+  background-color: var(--background-element-color);
+  box-shadow: 0 2px 0 var(--shadow-color);
+}
+.privacy-policy-nav {
+  gap: 10px;
+  width: 1100px;
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  flex-shrink: 0;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.privacy-policy-logo {
+  width: 89px;
+  height: 49px;
+  display: flex;
+  padding: 3px 5px;
+  align-items: center;
+  flex-direction: row;
+  background-image: var(--logo-image);
+}
+.privacy-policy-sectioncontact {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+}
+.privacy-policy-div {
+  gap: 10px;
+  display: flex;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.privacy-policy-text {
+  color: var(--text-main-color);
+  height: auto;
+  font-size: 20px;
+  font-style: normal;
+  text-align: left;
+  font-family: Futura PT, serif;
+  font-weight: 500;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.privacy-policy-div1 {
+  gap: 24px;
+  display: flex;
+  align-items: flex-start;
+}
+.privacy-policy-settings-container {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.privacy-policy-lang {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.privacy-policy-lang:active {
+  transform: scale(0.9);
+}
+.privacy-policy-theme {
+  gap: 10px;
+  display: flex;
+  margin-right: 10px;
+  align-items: center;
+  flex-direction: column;
+}
+.privacy-policy-theme:active {
+  transform: scale(0.9);
+}
+.privacy-policy-text02 {
+  color: var(--text-main-color);
+  height: auto;
+  font-size: 20px;
+  font-style: normal;
+  text-align: left;
+  font-family: Futura PT, serif;
+  font-weight: 300;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.privacy-policy-section {
+  gap: 56px;
+  width: 1110px;
+  height: 100vh;
+  display: flex;
+  padding: 100px 0;
+  align-items: center;
+  flex-shrink: 0;
+  justify-content: space-between;
+}
+.privacy-policy-content {
+  flex-direction: column;
+}
+.privacy-policy-text04 {
+  color: var(--text-main-color);
+  width: 786px;
+  height: auto;
+  font-size: 60px;
+  font-style: normal;
+  text-align: center;
+  font-family: Futura PT, serif;
+  font-weight: 400;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+@media(max-width: 1200px) {
+  .privacy-policy-header {
+    width: auto;
+  }
+
+  .privacy-policy-nav {
+    gap: 16px;
+    width: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .privacy-policy-section {
+    width: 100%;
+  }
+}
+@media(max-width: 991px) {
+  .privacy-policy-header {
+    width: auto;
+    align-self: stretch;
+  }
+  .privacy-policy-nav {
+    width: 100%;
+    align-self: center;
+    justify-content: center;
+  }
+}
