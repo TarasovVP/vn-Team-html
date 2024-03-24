@@ -29,5 +29,6 @@
   "form_send_button": "Send",
   "form_name_error": "Please complete this required field.",
   "form_email_error": "Please complete this required field.",
-  "form_message_error": "Please complete this required field."
+  "form_message_error": "Please complete this required field.",
+  "successfully_sent": "Successfully sent."
 }

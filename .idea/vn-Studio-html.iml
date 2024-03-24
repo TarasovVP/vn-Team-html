@@ -10,8 +10,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="lottie-web" level="application" />
     <orderEntry type="library" name="@teleporthq/teleport-custom-scripts" level="application" />
     <orderEntry type="library" name="animate.css" level="application" />
+    <orderEntry type="library" name="lottie-web" level="application" />
+    <orderEntry type="library" name="@teleporthq/teleport-custom-scripts" level="application" />
+    <orderEntry type="library" name="lottie-web" level="application" />
+    <orderEntry type="library" name="animate.css" level="application" />
+    <orderEntry type="library" name="toastr.js" level="application" />
   </component>
 </module>

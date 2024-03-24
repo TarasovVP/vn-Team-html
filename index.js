@@ -1,5 +1,6 @@
 
 let currentLanguage = 'en';
+let stringRes = null
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -55,6 +56,7 @@ function setTextToElements() {
     fetch(`${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
+            stringRes = data
             Object.keys(data).forEach(key => {
                 const element = document.getElementById(key);
                 if (element) {
@@ -216,24 +218,23 @@ function fetchContactUs(inputName, inputEmail, inputMessage) {
         },
         body: JSON.stringify(contactUs)
     })
-        .then(response => response.json())
+        .then(response => response.toString())
         .then(data => showMessage(null))
         .catch(error => showMessage(error));
 }
 
 
 function showMessage(error) {
-   /* const notyf = new Notyf();
     try {
         if (error !== null) {
-            console.error('Error:', error)
-            notyf.error(error.toString())
+            console.error(error)
+            toastr.error(error.toString())
         } else {
-            let successMessage = 'Успешно отправлено!'
+            let successMessage = stringRes['successfully_sent']
             console.log(successMessage)
-            notyf.success(successMessage)
+            toastr.success(successMessage)
         }
     } catch (e) {
-        console.error('Error:', e.message())
-    }*/
+        console.error(e.message)
+    }
 }
