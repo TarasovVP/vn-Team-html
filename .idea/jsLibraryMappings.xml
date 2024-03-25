@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{@teleporthq/teleport-custom-scripts, animate.css, lottie-web, toastr.js}" />
+    <file url="PROJECT" libraries="{@teleporthq/teleport-custom-scripts, animate.css, jquery-3.6.0, lottie-web, toastr.js}" />
     <includedPredefinedLibrary name="Node.js Core" />
   </component>
 </project>
