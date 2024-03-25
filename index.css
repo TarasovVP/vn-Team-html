@@ -85,6 +85,7 @@
   border-radius: 50%;
 }
 .home-lang:hover {
+  cursor: pointer;
   box-shadow: 0 4px 8px var(--shadow-color);
   border-radius: 50%;
 }
@@ -100,6 +101,7 @@
   transition: filter 0.3s ease;
 }
 .home-theme:hover {
+  cursor: pointer;
   filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .home-theme:active {
@@ -159,6 +161,7 @@
   transition: border-color 0.2s ease;
 }
 .home-btn:hover {
+  cursor: pointer;
   border-color: var(--color-accent);
 }
 .home-btn:active {
@@ -971,19 +974,6 @@
   align-items: flex-start;
   flex-direction: column;
 }
-.home-text-privacy-policy {
-  color: var(--text-main-color);
-  width: 614px;
-  height: auto;
-  font-size: 24px;
-  font-style: normal;
-  text-align: left;
-  font-family: Futura PT, serif;
-  font-weight: 400;
-  line-height: 139.9999976158142%;
-  font-stretch: normal;
-  text-decoration: none;
-}
 .home-text70 {
   color: var(--text-main-color);
   width: 614px;
@@ -1015,6 +1005,7 @@
   transition: filter 0.3s ease;
 }
 .home-telegram:hover {
+  cursor: pointer;
   filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .home-telegram:active {
@@ -1027,6 +1018,7 @@
   transition: filter 0.3s ease;
 }
 .home-email:hover {
+  cursor: pointer;
   filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .home-email:active {
@@ -1171,6 +1163,7 @@
   transition: border-color 0.2s ease;
 }
 .home-btn-send:hover {
+  cursor: pointer;
   border-color: var(--color-accent);
 }
 .home-btn-send:active {
@@ -1198,52 +1191,57 @@
 .home-bottom {
   width: 1110px;
   display: flex;
-  margin: 16px 16px;
+  margin: 8px 16px 16px 16px;
   align-items: center;
   flex-shrink: 0;
   flex-direction: row;
   justify-content: space-between;
 }
 .home-logo-bottom {
-  min-height: 50px;
-  min-width: 90px;
+  min-height: 45px;
+  min-width: 81px;
   background-image: var(--logo-image);
+  background-size: 80%;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 .home-text-linkedin {
-  color: var(--text-main-color);
+  color: var(--dl-color-gray-700);
   height: auto;
   font-size: 20px;
   align-self: stretch;
   font-style: normal;
   text-align: center;
   font-family: Futura PT, serif;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .home-text-linkedin:hover {
+  cursor: pointer;
   color: var(--additional-text-color);
 }
 .home-text-linkedin:active {
   transform: scale(0.98);
 }
 .home-text-privacy-policy {
-  color: var(--text-main-color);
+  color: var(--dl-color-gray-700);
   height: auto;
   font-size: 20px;
   align-self: stretch;
   font-style: normal;
   text-align: center;
   font-family: Futura PT, serif;
-  font-weight: 400;
+  font-weight: 200;
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 .home-text-privacy-policy:hover {
+  cursor: pointer;
   color: var(--additional-text-color);
 }
 .home-text-privacy-policy:active {
@@ -1258,7 +1256,7 @@
 }
 @media(max-width: 1200px) {
   .home-header {
-    width: auto;
+    width: 100%;
   }
   .home-nav {
     gap: 16px;
@@ -1317,7 +1315,7 @@
 }
 @media(max-width: 991px) {
   .home-header {
-    width: auto;
+    width: 100%;
     align-self: stretch;
   }
   .home-nav {

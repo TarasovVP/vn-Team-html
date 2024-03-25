@@ -92,7 +92,7 @@ input::placeholder {
 input:focus {
   outline: none !important;
   border: 1px solid var(--input-border-color);
-  box-shadow: 0 0 10px #719ECE;
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 textarea {
   border: 1px solid rgba(0, 0, 0, 0);
@@ -104,7 +104,7 @@ textarea::placeholder {
 textarea:focus {
   outline: none !important;
   border:1px solid var(--input-border-color);
-  box-shadow: 0 0 10px #719ECE;
+  box-shadow: 0 0 10px var(--shadow-color);
 }
 .textarea {
   color: var(--dl-color-gray-black);
