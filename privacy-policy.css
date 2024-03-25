@@ -81,6 +81,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  border-radius: 50%;
+}
+.privacy-policy-lang:hover {
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border-radius: 50%;
 }
 .privacy-policy-lang:active {
   transform: scale(0.9);
@@ -91,6 +97,13 @@
   margin-right: 10px;
   align-items: center;
   flex-direction: column;
+  transition: filter 0.3s ease;
+}
+.home-theme:hover {
+  filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
+}
+.home-theme:hover {
+  filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .privacy-policy-theme:active {
   transform: scale(0.9);

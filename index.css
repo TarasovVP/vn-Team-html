@@ -81,6 +81,12 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  transition: box-shadow 0.3s ease;
+  border-radius: 50%;
+}
+.home-lang:hover {
+  box-shadow: 0 4px 8px var(--shadow-color);
+  border-radius: 50%;
 }
 .home-lang:active {
   transform: scale(0.9);
@@ -91,6 +97,10 @@
   margin-right: 10px;
   align-items: center;
   flex-direction: column;
+  transition: filter 0.3s ease;
+}
+.home-theme:hover {
+  filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .home-theme:active {
   transform: scale(0.9);
@@ -1002,6 +1012,10 @@
   width: 23px;
   height: 23px;
   background-image: var(--telegram-image);
+  transition: filter 0.3s ease;
+}
+.home-telegram:hover {
+  filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .home-telegram:active {
   transform: scale(0.9);
@@ -1010,6 +1024,10 @@
   width: 24px;
   height: 24px;
   background-image: var(--email-image);
+  transition: filter 0.3s ease;
+}
+.home-email:hover {
+  filter: invert(44%) sepia(50%) saturate(235%) hue-rotate(74deg) brightness(94%) contrast(92%);
 }
 .home-email:active {
   transform: scale(0.9);
@@ -1117,6 +1135,7 @@
   height: 140px;
   display: flex;
   padding: 8px 16px;
+  resize: none;
   font-size: 20px;
   text-align: left;
   align-items: flex-start;
@@ -1202,6 +1221,10 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+.home-text-linkedin:hover {
+  color: var(--additional-text-color);
 }
 .home-text-linkedin:active {
   transform: scale(0.98);
@@ -1218,6 +1241,10 @@
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+.home-text-privacy-policy:hover {
+  color: var(--additional-text-color);
 }
 .home-text-privacy-policy:active {
   transform: scale(0.98);
