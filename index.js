@@ -74,7 +74,7 @@ function setThemeButton(button) {
     const body = document.body;
     let currenTheme = localStorage.getItem('theme') || 'light-theme'
     body.classList.add(currenTheme);
-    button.src =  currenTheme === 'dark-theme' ? 'public/external/ic-dark-theme.svg' : 'public/external/ic-light-theme.svg';
+    button.src =  currenTheme === 'dark-theme' ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
 
     button.addEventListener('click', () => {
         if (body.classList.contains('dark-theme')) {
@@ -84,14 +84,17 @@ function setThemeButton(button) {
             body.classList.replace('light-theme', 'dark-theme');
             localStorage.setItem('theme', 'dark-theme');
         }
-        button.src =  body.classList.contains('dark-theme') ? 'public/external/ic-dark-theme.svg' : 'public/external/ic-light-theme.svg';
+        button.src =  body.classList.contains('dark-theme') ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
     });
 }
 
 function setLangButton(button) {
+    currentLanguage = localStorage.getItem('currentLanguage');
+    currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
     button.onclick = function() {
         currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
-        button.src = currentLanguage === 'ua' ? 'public/external/ic-en-lang.svg' : 'public/external/ic-ua-lang.svg';
+        localStorage.setItem('currentLanguage', currentLanguage);
+        button.src = currentLanguage === 'ua' ? '/public/external/ic-en-lang.svg' : '/public/external/ic-ua-lang.svg';
         setTextToElements();
     };
 }
