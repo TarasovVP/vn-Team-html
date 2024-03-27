@@ -12,9 +12,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function setPPThemeButton(button) {
     const body = document.body;
-    let currenTheme = localStorage.getItem('theme') || 'light-theme'
-    body.classList.add(currenTheme);
-    button.src =  currenTheme === 'dark-theme' ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
+    let isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    let currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : isDarkTheme ? 'dark-theme' : 'light-theme'
+    body.classList.add(currentTheme);
+    button.src =  currentTheme === 'dark-theme' ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
 
     button.addEventListener('click', () => {
         if (body.classList.contains('dark-theme')) {
@@ -29,8 +30,10 @@ function setPPThemeButton(button) {
 }
 
 function setPPLangButton(button) {
-    currentLanguage = localStorage.getItem('currentLanguage');
-    currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
+    currentLanguage = localStorage.getItem('currentLanguage') ? localStorage.getItem('currentLanguage') : navigator.language || navigator.userLanguage;
+    console.error('pp setLangButton currentLanguage ' + currentLanguage)
+    currentLanguage = currentLanguage === 'ua' ? 'ua' : 'en';
+    button.src = currentLanguage === 'ua' ? '/public/external/ic-en-lang.svg' : '/public/external/ic-ua-lang.svg';
     button.onclick = function() {
         currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
         localStorage.setItem('currentLanguage', currentLanguage);
@@ -40,15 +43,13 @@ function setPPLangButton(button) {
 }
 
 function setTextContent() {
+    const element = document.querySelector('.privacy-policy-content');
     fetch(`privacy-policy-${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
-            Object.keys(data).forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.innerHTML = data[key];
-                }
-            });
+            if (element && data['privacy-policy-content']) {
+                element.innerHTML = data['privacy-policy-content'];
+            }
         })
         .catch(error => console.error('Error loading language:', error));
 }

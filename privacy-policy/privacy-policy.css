@@ -43,18 +43,6 @@
 .privacy-policy-logo:hover {
   cursor: pointer;
 }
-.privacy-policy-sectioncontact {
-  gap: 24px;
-  display: flex;
-  align-items: center;
-}
-.privacy-policy-div {
-  gap: 10px;
-  display: flex;
-  padding: 8px;
-  align-items: center;
-  justify-content: center;
-}
 .privacy-policy-text {
   color: var(--text-main-color);
   height: auto;
@@ -66,11 +54,6 @@
   font-stretch: normal;
   text-transform: uppercase;
   text-decoration: none;
-}
-.privacy-policy-div1 {
-  gap: 24px;
-  display: flex;
-  align-items: flex-start;
 }
 .privacy-policy-settings-container {
   gap: 10px;
@@ -123,28 +106,23 @@
 .privacy-policy-section {
   gap: 56px;
   width: 1110px;
-  height: 100vh;
   display: flex;
-  padding: 100px 0;
+  padding: 100px 0 50px 0;
   align-items: center;
   flex-shrink: 0;
   justify-content: space-between;
 }
 .privacy-policy-content {
-  flex-direction: column;
-}
-.privacy-policy-text04 {
   color: var(--text-main-color);
-  width: 786px;
+  width: auto;
   height: auto;
-  font-size: 60px;
-  font-style: normal;
-  text-align: center;
-  font-weight: 400;
-  line-height: 139.9999976158142%;
-  font-stretch: normal;
-  text-transform: uppercase;
-  text-decoration: none;
+}
+@media(max-width: 1440px) {
+  .privacy-policy-container {
+    background-size: cover;
+    background-image: var(--main-background-image);
+    background-position: center;
+  }
 }
 @media(max-width: 1200px) {
   .privacy-policy-header {
