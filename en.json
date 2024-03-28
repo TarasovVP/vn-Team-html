@@ -30,5 +30,7 @@
   "form_name_error": "Please complete this required field.",
   "form_email_error": "Please complete this required field.",
   "form_message_error": "Please complete this required field.",
+  "in_process_sent": "Sending in process.",
+  "error_sent": "Sending is failed. Try again.",
   "successfully_sent": "Successfully sent."
 }

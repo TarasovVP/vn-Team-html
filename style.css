@@ -85,6 +85,7 @@
 input {
   border: 1px solid rgba(0, 0, 0, 0);
   transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--background-element-color);
 }
 input::placeholder {
   color: var(--input-placeholder-color);
@@ -97,6 +98,7 @@ input:focus {
 textarea {
   border: 1px solid rgba(0, 0, 0, 0);
   transition: border-color 0.2s, box-shadow 0.2s;
+  background-color: var(--background-element-color);
 }
 textarea::placeholder {
   color: var(--input-placeholder-color);

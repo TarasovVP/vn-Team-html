@@ -1,14 +1,13 @@
-
 let currentLanguage = 'en';
 let stringRes = null
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
     //theme
     setThemeButton(document.querySelector('.home-theme'))
 
     //lang
-    setLangButton( document.querySelector('.home-lang'))
+    setLangButton(document.querySelector('.home-lang'))
     setTextToElements()
 
     //contact us button
@@ -44,8 +43,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const inputMessageError = document.querySelector('.input-message-error');
 
     addInputListeners([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])
-    buttonSend.onclick = function() {
-        if (validateInputs([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])) {
+    buttonSend.onclick = function () {
+        if (validateInputs([inputName, inputEmail], [inputNameError, inputEmailError, inputMessageError])) {
+            buttonSend.style.pointerEvents = 'none';
             fetchContactUs(inputName, inputEmail, inputMessage)
         }
 
@@ -75,7 +75,7 @@ function setThemeButton(button) {
     let isDarkTheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     let currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : isDarkTheme ? 'dark-theme' : 'light-theme'
     body.classList.add(currentTheme);
-    button.src =  currentTheme === 'dark-theme' ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
+    button.src = currentTheme === 'dark-theme' ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
 
     button.addEventListener('click', () => {
         if (body.classList.contains('dark-theme')) {
@@ -85,66 +85,68 @@ function setThemeButton(button) {
             body.classList.replace('light-theme', 'dark-theme');
             localStorage.setItem('theme', 'dark-theme');
         }
-        button.src =  body.classList.contains('dark-theme') ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
+        button.src = body.classList.contains('dark-theme') ? '/public/external/ic-dark-theme.svg' : '/public/external/ic-light-theme.svg';
     });
 }
 
 function setLangButton(button) {
     currentLanguage = localStorage.getItem('currentLanguage') ? localStorage.getItem('currentLanguage') : navigator.language || navigator.userLanguage;
-    console.error('main setLangButton currentLanguage ' + currentLanguage)
     currentLanguage = currentLanguage === 'ua' ? 'ua' : 'en';
     button.src = currentLanguage === 'ua' ? '/public/external/ic-en-lang.svg' : '/public/external/ic-ua-lang.svg';
-    button.onclick = function() {
+    button.onclick = function () {
         currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
         localStorage.setItem('currentLanguage', currentLanguage);
         button.src = currentLanguage === 'ua' ? '/public/external/ic-en-lang.svg' : '/public/external/ic-ua-lang.svg';
-        console.error('main onclick currentLanguage ' + currentLanguage)
         setTextToElements();
     };
 }
 
 function setHomeButton(button, text, destination) {
-    button.addEventListener('mouseover', function() {
+    button.addEventListener('mouseover', function () {
         text.style.color = 'rgba(91, 128, 92, 1)';
     });
 
 
-    button.addEventListener('mouseout', function() {
+    button.addEventListener('mouseout', function () {
         text.style.color = '';
     });
 
-    button.onclick = function() {
-        destination.scrollIntoView({ behavior: 'smooth' });
+    button.onclick = function () {
+        destination.scrollIntoView({behavior: 'smooth'});
     };
 }
 
-function addWhatWeDoHover(animationContainer, itemContainer) {
-    const animation = lottie.loadAnimation({
+function initAnimation(animationContainer, loop, autoplay, path) {
+    animationContainer.innerHTML = ''
+    return lottie.loadAnimation({
         container: animationContainer,
         renderer: 'svg',
-        loop: false,
-        autoplay: false,
-        path: 'lottie.json'
+        loop: loop,
+        autoplay: autoplay,
+        path: path
     });
+}
 
-    itemContainer.addEventListener('mouseenter', function() {
+function addWhatWeDoHover(animationContainer, itemContainer) {
+    const animation = initAnimation(animationContainer, false, false,'weDoAnimation.json')
+    itemContainer.addEventListener('mouseenter', function () {
         animation.play();
     });
 
-    itemContainer.addEventListener('mouseleave', function() {
+    itemContainer.addEventListener('mouseleave', function () {
         animation.stop();
     });
 }
 
 function whyUsHover(item, itemHeaderText, itemDescriptionText) {
-    item.addEventListener('mouseover', function() {
+    item.addEventListener('mouseover', function () {
         const mainTextColor = getComputedStyle(document.body).getPropertyValue('--text-main-color').trim();
         itemHeaderText.style.color = mainTextColor;
         itemDescriptionText.style.color = mainTextColor;
     });
 
 
-    item.addEventListener('mouseout', function() {
+    item.addEventListener('mouseout', function () {
         const colorAccent = getComputedStyle(document.body).getPropertyValue('--additional-text-color').trim();
         itemHeaderText.style.color = colorAccent;
         itemDescriptionText.style.color = colorAccent;
@@ -156,22 +158,22 @@ function setOurBlog(blockBlog, iconArrow) {
         const originalSrc = iconArrow.src;
         const newSrc = 'public/external/ic-long-arrow.svg';
 
-        blockBlog.addEventListener('mouseover', function() {
+        blockBlog.addEventListener('mouseover', function () {
             iconArrow.src = newSrc;
         });
 
-        blockBlog.addEventListener('mouseout', function() {
+        blockBlog.addEventListener('mouseout', function () {
             iconArrow.src = originalSrc;
         });
     }
 }
 
 function setSendButton(buttonSend, textSend) {
-    buttonSend.addEventListener('mouseover', function() {
+    buttonSend.addEventListener('mouseover', function () {
         textSend.style.color = 'rgba(91, 128, 92, 1)';
     });
 
-    buttonSend.addEventListener('mouseout', function() {
+    buttonSend.addEventListener('mouseout', function () {
         textSend.style.color = '';
     });
 }
@@ -197,7 +199,7 @@ function validateInputs(inputs, errorMessages) {
 function addInputListeners(inputs, errorMessages) {
 
     inputs.forEach((input, index) => {
-        input.addEventListener('input', function() {
+        input.addEventListener('input', function () {
             const errorMessage = errorMessages[index];
             errorMessage.style.visibility = 'hidden';
         })
@@ -218,7 +220,10 @@ function fetchContactUs(inputName, inputEmail, inputMessage) {
         email: inputEmail.value,
         message: inputMessage.value
     };
-    fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function-contact-us', {
+    const sendingStatus = document.querySelector('.sending-status');
+    sendingStatus.visibility = 'visible';
+    let animation = initAnimation(sendingStatus, true, true, 'preloader.json')
+    fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function-contact-usЙЙ', {
         method: 'POST',
         headers: {
             'Content-Type': 'text/plain'
@@ -226,13 +231,21 @@ function fetchContactUs(inputName, inputEmail, inputMessage) {
         body: JSON.stringify(contactUs)
     })
         .then(response => response.toString())
-        .then(data => handleResponse(inputName, inputEmail, inputMessage, null))
-        .catch(error => handleResponse(inputName, inputEmail, inputMessage, error));
+        .then(data => handleResponse(inputName, inputEmail, inputMessage, null, animation))
+        .catch(error => handleResponse(inputName, inputEmail, inputMessage, error, animation));
 }
 
-function handleResponse(inputName, inputEmail, inputMessage, error) {
-    clearInputs(inputName, inputEmail, inputMessage)
-    showMessage(error)
+function handleResponse(inputName, inputEmail, inputMessage, error, animation) {
+    setTimeout(() => {
+        animation.stop();
+        document.querySelector('.home-btn-send').style.pointerEvents = 'auto';
+        if (error != null) {
+            console.error(error)
+        } else {
+            clearInputs(inputName, inputEmail, inputMessage)
+        }
+        showMessage(error != null)
+    }, 2000);
 }
 
 function clearInputs(inputName, inputEmail, inputMessage) {
@@ -242,16 +255,10 @@ function clearInputs(inputName, inputEmail, inputMessage) {
 }
 
 function showMessage(error) {
-    try {
-        if (error !== null) {
-            console.error(error)
-            toastr.error(error.toString())
-        } else {
-            let successMessage = stringRes['successfully_sent']
-            console.log(successMessage)
-            toastr.success(successMessage)
-        }
-    } catch (e) {
-        console.error(e.message)
-    }
+    const sendingStatus = document.querySelector('.sending-status')
+    sendingStatus.style.color = error ? '#E14747' : '#5B805C';
+    sendingStatus.textContent = error ? stringRes['error_sent'] : stringRes['successfully_sent'];
+    setTimeout(() => {
+        sendingStatus.textContent = '';
+    }, 2000);
 }

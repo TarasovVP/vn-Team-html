@@ -31,7 +31,6 @@ function setPPThemeButton(button) {
 
 function setPPLangButton(button) {
     currentLanguage = localStorage.getItem('currentLanguage') ? localStorage.getItem('currentLanguage') : navigator.language || navigator.userLanguage;
-    console.error('pp setLangButton currentLanguage ' + currentLanguage)
     currentLanguage = currentLanguage === 'ua' ? 'ua' : 'en';
     button.src = currentLanguage === 'ua' ? '/public/external/ic-en-lang.svg' : '/public/external/ic-ua-lang.svg';
     button.onclick = function() {

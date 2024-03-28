@@ -1069,10 +1069,9 @@
   font-family: Futura PT, serif;
   font-weight: 300;
   border-radius: 8px;
-  background-color: var(--input-background-color);
 }
 .input-name-error {
-  color: red;
+  color: var(--dl-color-danger-700);
   display: flex;
   visibility: hidden;
   font-size: 14px;
@@ -1101,10 +1100,9 @@
   font-family: Futura PT, serif;
   font-weight: 300;
   border-radius: 8px;
-  background-color: var(--input-background-color);
 }
 .input-email-error {
-  color: red;
+  color: var(--dl-color-danger-700);
   display: flex;
   visibility: hidden;
   font-size: 14px;
@@ -1135,17 +1133,16 @@
   font-family: Futura PT, serif;
   font-weight: 300;
   border-radius: 8px;
-  background-color: var(--input-background-color);
 }
-.input-message-error {
-  color: red;
+.sending-status {
+  color: var(--additional-text-color);
+  min-height: 18px;
   display: flex;
-  visibility: hidden;
   font-size: 14px;
   text-align: left;
-  margin-top: 4px;
-  align-items: flex-start;
+  align-items: center;
   flex-shrink: 0;
+  box-sizing: border-box;
   font-family: Futura PT, serif;
   font-weight: 300;
 }

@@ -184,7 +184,6 @@
             href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
     />
     <link rel="icon" type="image/png" href="public/external/ic-favicon.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
     <link rel="stylesheet" href="style.css"/>
     <link rel="stylesheet" href="index.css"/>
 </head>
@@ -440,10 +439,8 @@
                     <label>
                         <textarea type="text" rows="5" placeholder="Message" class="home-input-message"></textarea>
                     </label>
-                    <span class="input-message-error"
-                          id="form_message_error">Please complete this required field.</span>
                 </div>
-
+                <span class="sending-status" id="sending-status"></span>
                 <div class="home-btn-send">
                     <span class="home-text65"><span id="form_send_button">Send</span></span>
                 </div>
@@ -455,7 +452,7 @@
             <a href="https://www.linkedin.com/company/v-n-team" target="_blank">
                 <div><span class="home-text-linkedin"><span id="linkedin-button">Linkedin</span></span></div>
             </a>
-            <a href="/privacy-policy">
+            <a href="https://vn-team.com/privacy-policy">
                 <div><span class="home-text-privacy-policy"><span
                         id="privacy-policy-button">Privacy Policy</span></span></div>
             </a>
@@ -463,8 +460,6 @@
     </div>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 <script src="index.js"></script>
 </body>
 </html>
