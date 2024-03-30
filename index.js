@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputEmailError = document.querySelector('.input-email-error');
     const inputMessageError = document.querySelector('.input-message-error');
 
-    addInputListeners([inputName, inputEmail, inputMessage], [inputNameError, inputEmailError, inputMessageError])
+    addInputListeners([inputName, inputEmail], [inputNameError, inputEmailError, inputMessageError])
     buttonSend.onclick = function () {
         if (validateInputs([inputName, inputEmail], [inputNameError, inputEmailError, inputMessageError])) {
             buttonSend.style.pointerEvents = 'none';
@@ -223,15 +223,14 @@ function fetchContactUs(inputName, inputEmail, inputMessage) {
     const sendingStatus = document.querySelector('.sending-status');
     sendingStatus.visibility = 'visible';
     let animation = initAnimation(sendingStatus, true, true, 'preloader.json')
-    fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function-contact-usЙЙ', {
+    fetch('https://europe-central2-vn-team-website.cloudfunctions.net/function-contact-us', {
         method: 'POST',
         headers: {
             'Content-Type': 'text/plain'
         },
         body: JSON.stringify(contactUs)
     })
-        .then(response => response.toString())
-        .then(data => handleResponse(inputName, inputEmail, inputMessage, null, animation))
+        .then(() => handleResponse(inputName, inputEmail, inputMessage, null, animation))
         .catch(error => handleResponse(inputName, inputEmail, inputMessage, error, animation));
 }
 
@@ -245,7 +244,7 @@ function handleResponse(inputName, inputEmail, inputMessage, error, animation) {
             clearInputs(inputName, inputEmail, inputMessage)
         }
         showMessage(error != null)
-    }, 2000);
+    }, 1000);
 }
 
 function clearInputs(inputName, inputEmail, inputMessage) {
