@@ -14,18 +14,19 @@ document.addEventListener('DOMContentLoaded', function () {
     setHomeButton(document.querySelector('.home-btn'), document.querySelector('.home-text06'), document.querySelector('.home-form'))
 
     //what we do
-    addWhatWeDoHover(document.querySelector('.lottie-container'), document.querySelector('.home-item'))
-    addWhatWeDoHover(document.querySelector('.lottie-container-01'), document.querySelector('.home-item01'))
-    addWhatWeDoHover(document.querySelector('.lottie-container-02'), document.querySelector('.home-item02'))
-    addWhatWeDoHover(document.querySelector('.lottie-container-03'), document.querySelector('.home-item03'))
+    addWhatWeDoHover(document.querySelector('.android-lottie-container'), document.querySelector('.android-item'))
+    addWhatWeDoHover(document.querySelector('.ios-lottie-container'), document.querySelector('.ios-item'))
+    addWhatWeDoHover(document.querySelector('.web-lottie-container'), document.querySelector('.web-item'))
+    addWhatWeDoHover(document.querySelector('.desktop-lottie-container'), document.querySelector('.desktop-item'))
+    addWhatWeDoHover(document.querySelector('.server-lottie-container'), document.querySelector('.server-item'))
 
     //why us
-    whyUsHover(document.querySelector('.home-item04'), document.querySelector('.home-text28'), document.querySelector('.home-text33'))
-    whyUsHover(document.querySelector('.home-item05'), document.querySelector('.home-text35'), document.querySelector('.home-text39'))
-    whyUsHover(document.querySelector('.home-item06'), document.querySelector('.home-text41'), document.querySelector('.home-text45'))
-    whyUsHover(document.querySelector('.home-item07'), document.querySelector('.home-text47'), document.querySelector('.home-text52'))
-    whyUsHover(document.querySelector('.home-item08'), document.querySelector('.home-text54'), document.querySelector('.home-text58'))
-    whyUsHover(document.querySelector('.home-item09'), document.querySelector('.home-text60'), document.querySelector('.home-text64'))
+    devProcessHover(document.querySelector('.home-item04'), document.querySelector('.home-text28'), document.querySelector('.home-text33'))
+    devProcessHover(document.querySelector('.home-item05'), document.querySelector('.home-text35'), document.querySelector('.home-text39'))
+    devProcessHover(document.querySelector('.home-item06'), document.querySelector('.home-text41'), document.querySelector('.home-text45'))
+    devProcessHover(document.querySelector('.home-item07'), document.querySelector('.home-text47'), document.querySelector('.home-text52'))
+    devProcessHover(document.querySelector('.home-item08'), document.querySelector('.home-text54'), document.querySelector('.home-text58'))
+    devProcessHover(document.querySelector('.home-item09'), document.querySelector('.home-text60'), document.querySelector('.home-text64'))
 
     //our blog
     setOurBlog(document.querySelector('.home-itemblog'), document.querySelector('.home-iconarrow img'))
@@ -138,7 +139,7 @@ function addWhatWeDoHover(animationContainer, itemContainer) {
     });
 }
 
-function whyUsHover(item, itemHeaderText, itemDescriptionText) {
+function devProcessHover(item, itemHeaderText, itemDescriptionText) {
     item.addEventListener('mouseover', function () {
         const mainTextColor = getComputedStyle(document.body).getPropertyValue('--text-main-color').trim();
         itemHeaderText.style.color = mainTextColor;

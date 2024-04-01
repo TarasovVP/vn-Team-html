@@ -209,15 +209,15 @@
 .home-text08 {
   height: auto;
 }
-
-.home-section1 {
+.wedoing-section-top-row {
   gap: 30px;
   width: 1110px;
   display: flex;
   align-items: flex-start;
   flex-shrink: 0;
+  justify-content: space-between;
 }
-.home-item {
+.android-item {
   gap: 8px;
   width: 255px;
   height: 300px;
@@ -230,13 +230,13 @@
   flex-direction: column;
   background-color: var(--background-element-color);
 }
-.home-icon {
+.android-icon {
   gap: 10px;
   display: flex;
   position: relative;
   align-items: flex-start;
 }
-.lottie-container {
+.android-lottie-container {
   gap: 10px;
   width: 120px;
   height: 120px;
@@ -259,7 +259,7 @@
   margin: auto;
   position: absolute;
 }
-.home-text10 {
+.android-title {
   color: var(--text-main-color);
   height: auto;
   font-size: 30px;
@@ -272,7 +272,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-text12 {
+.android_desc {
   color: var(--text-main-color);
   height: auto;
   font-size: 20px;
@@ -285,7 +285,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-item01 {
+.ios-item {
   gap: 8px;
   width: 255px;
   height: 300px;
@@ -298,7 +298,7 @@
   flex-direction: column;
   background-color: var(--background-element-color);
 }
-.home-icon03 {
+.ios-icon {
   gap: 10px;
   display: flex;
   position: relative;
@@ -320,7 +320,7 @@
   margin: auto;
   position: absolute;
 }
-.lottie-container-01 {
+.ios-lottie-container {
   gap: 10px;
   width: 120px;
   height: 120px;
@@ -328,20 +328,20 @@
   position: relative;
   align-items: flex-start;
 }
-.home-text14 {
+.ios-title {
   color: var(--text-main-color);
   height: auto;
   font-size: 30px;
   align-self: stretch;
   font-style: normal;
   text-align: center;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 400;
   line-height: 140.18750190734863%;
   font-stretch: normal;
   text-decoration: none;
 }
-.home-text16 {
+.ios-desc {
   color: var(--text-main-color);
   height: auto;
   font-size: 20px;
@@ -354,7 +354,16 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-item02 {
+.wedoing-section-bottom-row {
+  gap: 30px;
+  width: 1110px;
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  margin-top: 32px;
+  justify-content: space-around;
+}
+.web-item {
   gap: 8px;
   width: 255px;
   height: 300px;
@@ -367,13 +376,13 @@
   flex-direction: column;
   background-color: var(--background-element-color);
 }
-.home-icon06 {
+.web-icon {
   gap: 10px;
   display: flex;
   position: relative;
   align-items: flex-start;
 }
-.lottie-container-02 {
+.web-lottie-container {
   gap: 10px;
   width: 120px;
   height: 120px;
@@ -396,7 +405,7 @@
   margin: auto;
   position: absolute;
 }
-.home-text18 {
+.web-title {
   color: var(--text-main-color);
   height: auto;
   font-size: 30px;
@@ -409,7 +418,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-text20 {
+.web-desc {
   color: var(--text-main-color);
   height: auto;
   font-size: 20px;
@@ -422,7 +431,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-item03 {
+.desktop-item {
   gap: 8px;
   width: 255px;
   height: 300px;
@@ -435,13 +444,13 @@
   flex-direction: column;
   background-color: var(--background-element-color);
 }
-.home-icon09 {
+.desktop-icon {
   gap: 10px;
   display: flex;
   position: relative;
   align-items: flex-start;
 }
-.lottie-container-03 {
+.desktop-lottie-container {
   gap: 10px;
   width: 120px;
   height: 120px;
@@ -464,7 +473,7 @@
   margin: auto;
   position: absolute;
 }
-.home-text22 {
+.desktop-title {
   color: var(--text-main-color);
   height: auto;
   font-size: 30px;
@@ -477,7 +486,7 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-text24 {
+.desktop-desc {
   color: var(--text-main-color);
   height: auto;
   font-size: 20px;
@@ -490,7 +499,75 @@
   font-stretch: normal;
   text-decoration: none;
 }
-.home-blockwhyus {
+.server-item {
+  gap: 8px;
+  width: 255px;
+  height: 300px;
+  display: flex;
+  padding: 24px;
+  box-shadow: 0 0 15px 0 var(--shadow-color) ;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  flex-direction: column;
+  background-color: var(--background-element-color);
+}
+.server-icon {
+  gap: 10px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+.server-lottie-container {
+  gap: 10px;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+}
+.home-icon10 {
+  gap: 10px;
+  display: flex;
+  z-index: 1;
+  position: relative;
+  align-items: flex-start;
+}
+.home-icon11 {
+  top: 35px;
+  left: -93px;
+  width: 48px;
+  height: 48px;
+  margin: auto;
+  position: absolute;
+}
+.server-title {
+  color: var(--text-main-color);
+  height: auto;
+  font-size: 30px;
+  align-self: stretch;
+  font-style: normal;
+  text-align: center;
+  font-family: Futura PT, serif;
+  font-weight: 400;
+  line-height: 140.18750190734863%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.server-desc {
+  color: var(--text-main-color);
+  height: auto;
+  font-size: 20px;
+  align-self: stretch;
+  font-style: normal;
+  text-align: center;
+  font-family: Futura PT, serif;
+  font-weight: 400;
+  line-height: 139.9999976158142%;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.home-block-dev-process {
   gap: 56px;
   width: 1110px;
   height: auto;
@@ -512,13 +589,13 @@
   text-transform: uppercase;
   text-decoration: none;
 }
-.home-section2 {
+.dev-process-section {
   gap: 100px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
 }
-.home-section3 {
+.dev-process-top-row {
   gap: 107px;
   width: 1110px;
   display: flex;
@@ -528,7 +605,7 @@
 }
 .home-item04 {
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   padding: 16px;
   align-items: flex-start;
@@ -553,13 +630,13 @@
 .home-text28 {
   color: var(--color-accent);
   height: auto;
-  flex-grow: 1;
   font-size: 64px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 400;
   line-height: 140%;
+  margin-right: 8px;
   font-stretch: normal;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -567,8 +644,7 @@
 .home-text31 {
   color: var(--text-main-color);
   height: auto;
-  flex-grow: 1;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   text-align: left;
   font-family: Futura PT, serif;
@@ -593,7 +669,7 @@
 }
 .home-item05 {
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   padding: 16px;
   align-items: flex-start;
@@ -618,11 +694,11 @@
 .home-text35 {
   color: var(--color-accent);
   height: auto;
-  flex-grow: 1;
   font-size: 64px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
+  margin-right: 8px;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -632,8 +708,7 @@
 .home-text38 {
   color: var(--text-main-color);
   height: auto;
-  flex-grow: 1;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   text-align: left;
  font-family: Futura PT, serif;
@@ -649,7 +724,7 @@
   align-self: stretch;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 300;
   line-height: 139.9999976158142%;
   font-stretch: normal;
@@ -658,7 +733,7 @@
 }
 .home-item06 {
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   padding: 16px;
   align-items: flex-start;
@@ -683,11 +758,11 @@
 .home-text41 {
   color: var(--color-accent);
   height: auto;
-  flex-grow: 1;
   font-size: 64px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
+  margin-right: 8px;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -697,11 +772,10 @@
 .home-text44 {
   color: var(--text-main-color);
   height: auto;
-  flex-grow: 1;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -714,14 +788,14 @@
   align-self: stretch;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 300;
   line-height: 139.9999976158142%;
   font-stretch: normal;
   text-decoration: none;
   transition: color 0.2s ease;
 }
-.home-section4 {
+.dev-process-bottom-row {
   gap: 89px;
   width: 1110px;
   display: flex;
@@ -731,7 +805,7 @@
 }
 .home-item07 {
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   padding: 16px;
   align-items: flex-start;
@@ -756,11 +830,11 @@
 .home-text47 {
   color: var(--color-accent);
   height: auto;
-  flex-grow: 1;
   font-size: 64px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
+  margin-right: 8px;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -770,11 +844,10 @@
 .home-text50 {
   color: var(--text-main-color);
   height: auto;
-  flex-grow: 1;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 400;
   line-height: 139.9999976158142%;
   font-stretch: normal;
@@ -787,7 +860,7 @@
   align-self: stretch;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 300;
   line-height: 139.9999976158142%;
   font-stretch: normal;
@@ -796,7 +869,7 @@
 }
 .home-item08 {
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   padding: 16px;
   align-items: flex-start;
@@ -821,11 +894,11 @@
 .home-text54 {
   color: var(--color-accent);
   height: auto;
-  flex-grow: 1;
   font-size: 64px;
   font-style: normal;
   text-align: left;
   font-family: Futura PT, serif;
+  margin-right: 8px;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -835,11 +908,10 @@
 .home-text57 {
   color: var(--text-main-color);
   height: auto;
-  flex-grow: 1;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -852,7 +924,7 @@
   align-self: stretch;
   font-style: normal;
   text-align: left;
- font-family: Futura PT, serif;
+  font-family: Futura PT, serif;
   font-weight: 300;
   line-height: 139.9999976158142%;
   font-stretch: normal;
@@ -861,7 +933,7 @@
 }
 .home-item09 {
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   padding: 16px;
   align-items: flex-start;
@@ -886,11 +958,11 @@
 .home-text60 {
   color: var(--color-accent);
   height: auto;
-  flex-grow: 1;
   font-size: 64px;
   font-style: normal;
   text-align: left;
   font-family: Futura PT, serif;
+  margin-right: 8px;
   font-weight: 400;
   line-height: 140%;
   font-stretch: normal;
@@ -900,8 +972,7 @@
 .home-text63 {
   color: var(--text-main-color);
   height: auto;
-  flex-grow: 1;
-  font-size: 24px;
+  font-size: 28px;
   font-style: normal;
   text-align: left;
   font-family: Futura PT, serif;
@@ -1268,41 +1339,41 @@
     width: 100%;
     position: relative;
   }
-  .home-section1 {
+  .wedoing-section {
     width: auto;
     align-self: stretch;
     justify-content: center;
   }
-  .home-item {
+  .android-item {
     width: 25%;
     flex-wrap: wrap;
     align-items: center;
   }
-  .home-item01 {
+  .ios-item {
     width: 25%;
     align-items: center;
   }
-  .home-item02 {
+  .web-item {
     width: 25%;
     align-items: center;
   }
-  .home-item03 {
+  .desktop-item {
     width: 25%;
     align-items: center;
   }
-  .home-blockwhyus {
+  .home-block-dev-process {
     width: 100%;
     position: relative;
   }
-  .home-section2 {
+  .dev-process-section {
     width: 100%;
     align-items: center;
   }
-  .home-section3 {
+  .dev-process-top-row {
     width: 100%;
     flex-wrap: wrap;
   }
-  .home-section4 {
+  .dev-process-bottom-row {
     width: 100%;
     flex-wrap: wrap;
   }
@@ -1339,18 +1410,18 @@
     padding-left: var(--dl-space-space-unit);
     padding-right: var(--dl-space-space-unit);
   }
-  .home-section1 {
+  .wedoing-section {
     width: auto;
     flex-wrap: wrap;
   }
-  .home-blockwhyus {
+  .home-block-dev-process {
     padding-left: var(--dl-space-space-unit);
     padding-right: var(--dl-space-space-unit);
   }
-  .home-section3 {
+  .dev-process-top-row {
     justify-content: center;
   }
-  .home-section4 {
+  .dev-process-bottom-row {
     justify-content: center;
   }
   .home-blockblog {
