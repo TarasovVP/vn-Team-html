@@ -215,7 +215,7 @@
 }
 .wedoing-section-top-row {
   gap: 30px;
-  width: 1000px;
+  width: 100%;
   display: flex;
   align-items: flex-start;
   flex-shrink: 0;
@@ -223,7 +223,7 @@
 }
 .android-item {
   gap: 8px;
-  width: 255px;
+  width: 300px;
   height: 300px;
   display: flex;
   padding: 24px;
@@ -291,7 +291,7 @@
 }
 .ios-item {
   gap: 8px;
-  width: 255px;
+  width: 300px;
   height: 300px;
   display: flex;
   padding: 24px;
@@ -370,7 +370,7 @@
 }
 .web-item {
   gap: 8px;
-  width: 255px;
+  width: 300px;
   height: 300px;
   display: flex;
   padding: 24px;
@@ -438,7 +438,7 @@
 }
 .desktop-item {
   gap: 8px;
-  width: 255px;
+  width: 300px;
   height: 300px;
   display: flex;
   padding: 24px;
@@ -506,7 +506,7 @@
 }
 .server-item {
   gap: 8px;
-  width: 255px;
+  width: 300px;
   height: 300px;
   display: flex;
   padding: 24px;
@@ -1267,7 +1267,6 @@
   margin: 8px 16px 16px 16px;
   align-items: center;
   flex-shrink: 0;
-  flex-direction: row;
   justify-content: space-between;
 }
 .home-logo-bottom {
@@ -1351,19 +1350,22 @@
   }
   .android-item {
     width: 25%;
-    flex-wrap: wrap;
     align-items: center;
   }
   .ios-item {
     width: 25%;
     align-items: center;
   }
-  .web-item {
+  .desktop-item {
     width: 25%;
     align-items: center;
   }
-  .desktop-item {
-    width: 25%;
+  .web-item {
+    width: 33%;
+    align-items: center;
+  }
+  .server-item {
+    width: 33%;
     align-items: center;
   }
   .home-block-dev-process {
