@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setTextToElements()
 
     //contact us button
-    setHomeButton(document.querySelector('.home-btn'), document.querySelector('.home-text06'), document.querySelector('.home-form'))
+    setHomeButton(document.querySelector('.contact-us-btn'), document.querySelector('.home-text06'), document.querySelector('.home-form'))
 
     //what we do
     addWhatWeDoHover(document.querySelector('.android-lottie-container'), document.querySelector('.android-item'))
