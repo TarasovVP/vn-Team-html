@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //lang
     setPPLangButton( document.querySelector('.privacy-policy-lang'))
     setTextContent()
+
+    decodeEmails()
 });
 
 function setPPThemeButton(button) {
@@ -48,7 +50,28 @@ function setTextContent() {
         .then(data => {
             if (element && data['privacy-policy-content']) {
                 element.innerHTML = data['privacy-policy-content'];
+                decodeEmails(element)
             }
         })
         .catch(error => console.error('Error loading language:', error));
+}
+
+function decodeEmails(container) {
+    let encodedAddresses = container.querySelectorAll('.__cf_email__');
+    for (let i = 0; i < encodedAddresses.length; i++) {
+        let encodedString = encodedAddresses[i].getAttribute('data-cfemail');
+        encodedAddresses[i].innerHTML = decodeCfEmail(encodedString);
+    }
+}
+
+function decodeCfEmail(encodedString) {
+    let email = '';
+    const key = parseInt(encodedString.substring(0, 2), 16);
+
+    for (let i = 2; i < encodedString.length; i += 2) {
+        let nextChar = parseInt(encodedString.substring(i, i + 2), 16);
+        email += String.fromCharCode(nextChar ^ key);
+    }
+
+    return email;
 }
