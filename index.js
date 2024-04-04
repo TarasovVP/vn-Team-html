@@ -3,12 +3,13 @@ let stringRes = null
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    fetchStringRes()
+
     //theme
     setThemeButton(document.querySelector('.home-theme'))
 
     //lang
     setLangButton(document.querySelector('.home-lang'))
-    setTextToElements()
 
     //contact us button
     setHomeButton(document.querySelector('.contact-us-btn'), document.querySelector('.home-text06'), document.querySelector('.home-form'))
@@ -20,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
     addWhatWeDoHover(document.querySelector('.desktop-lottie-container'), document.querySelector('.desktop-item'))
     addWhatWeDoHover(document.querySelector('.server-lottie-container'), document.querySelector('.server-item'))
 
-    //why us
-    devProcessHover(document.querySelector('.home-item04'), document.querySelector('.home-text28'), document.querySelector('.home-text33'))
-    devProcessHover(document.querySelector('.home-item05'), document.querySelector('.home-text35'), document.querySelector('.home-text39'))
-    devProcessHover(document.querySelector('.home-item06'), document.querySelector('.home-text41'), document.querySelector('.home-text45'))
-    devProcessHover(document.querySelector('.home-item07'), document.querySelector('.home-text47'), document.querySelector('.home-text52'))
-    devProcessHover(document.querySelector('.home-item08'), document.querySelector('.home-text54'), document.querySelector('.home-text58'))
-    devProcessHover(document.querySelector('.home-item09'), document.querySelector('.home-text60'), document.querySelector('.home-text64'))
+    //dev process
+    devProcessHover(document.querySelector('.ideation-item'), document.querySelector('.home-text28'), document.querySelector('.home-text33'))
+    devProcessHover(document.querySelector('.interaction-item'), document.querySelector('.home-text35'), document.querySelector('.home-text39'))
+    devProcessHover(document.querySelector('.design-item'), document.querySelector('.home-text41'), document.querySelector('.home-text45'))
+    devProcessHover(document.querySelector('.development-item'), document.querySelector('.home-text47'), document.querySelector('.home-text52'))
+    devProcessHover(document.querySelector('.testing-item'), document.querySelector('.home-text54'), document.querySelector('.home-text58'))
+    devProcessHover(document.querySelector('.deployment-item'), document.querySelector('.home-text60'), document.querySelector('.home-text64'))
 
     //our blog
     setOurBlog(document.querySelector('.home-itemblog'), document.querySelector('.home-iconarrow img'))
@@ -53,22 +54,37 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 });
 
-function setTextToElements() {
+function fetchStringRes() {
     fetch(`${currentLanguage}.json`)
         .then(response => response.json())
         .then(data => {
             stringRes = data
-            Object.keys(data).forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    element.textContent = data[key];
-                }
-            });
-            document.querySelector('.home-input-name').placeholder = data['form_name_placeholder'];
-            document.querySelector('.home-input-email').placeholder = data['form_email_placeholder'];
-            document.querySelector('.home-input-message').placeholder = data['form_message_placeholder'];
+            setMetaData()
+            setTextToElements()
         })
         .catch(error => console.error('Error loading language:', error));
+}
+
+function setMetaData() {
+    const metaTitle = document.getElementById('meta-tile');
+    if (metaTitle) {
+        metaTitle.content = stringRes['meta-title'];
+    }
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+        metaDescription.content = stringRes['meta_description'];
+    }
+}
+function setTextToElements() {
+    Object.keys(stringRes).forEach(key => {
+        const element = document.getElementById(key);
+        if (element) {
+            element.textContent = stringRes[key];
+        }
+    });
+    document.querySelector('.home-input-name').placeholder = stringRes['form_name_placeholder'];
+    document.querySelector('.home-input-email').placeholder = stringRes['form_email_placeholder'];
+    document.querySelector('.home-input-message').placeholder = stringRes['form_message_placeholder'];
 }
 
 function setThemeButton(button) {
