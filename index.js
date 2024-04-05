@@ -114,7 +114,7 @@ function setLangButton(button) {
         currentLanguage = currentLanguage === 'ua' ? 'en' : 'ua';
         localStorage.setItem('currentLanguage', currentLanguage);
         button.src = currentLanguage === 'ua' ? '/public/external/ic-en-lang.svg' : '/public/external/ic-ua-lang.svg';
-        setTextToElements();
+        fetchStringRes();
     };
 }
 
